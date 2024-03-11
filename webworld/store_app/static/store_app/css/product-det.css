@@ -1,0 +1,203 @@
+.product-detail{
+    width: 96%;
+    height: 900px;;
+    background-color: rgb(83, 83, 83);
+    padding: 20px;
+    margin: 1%;
+    max-height: 1000px;
+}
+.prd-display{
+    display: flex;
+}
+.product-details-side{
+    width: 100%;
+    height: 515px;;
+    background-color: rgb(83, 83, 83);
+    display: flex;
+    padding: 20px;
+    line-height: 30px;
+}
+
+.product-img{
+    border: 2px solid rgb(92, 89, 89);
+    height: 550px;
+    width: 1400px;
+    margin-right: 10px;
+    box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    background-color: white;
+}
+
+
+.product-img img{
+    width: 550px;
+    max-height: 550px;
+    margin-left: 40px ;
+}
+
+.product-detail h1{
+    font-size: 1.5rem;
+    margin: 0px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.small-img{
+    display: flex;
+}
+
+.small-img div{
+    width: 15%;
+    border: 2px solid rgb(49, 49, 49);
+    margin-top: 20px;
+    margin-left: 20px;
+    border-radius: 12px;
+    box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}   
+
+.small-img div:active{
+    scale: 1.02;
+}
+.small-img div img{
+    width: 180px;
+}
+
+.discription{
+    font-size: 1.2rem;
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+.add-to-cart{
+    display: flex;
+    width: 60%;
+    justify-content: space-between;
+}
+section{
+    color: black;
+    font-weight: 700;
+    display: flex;
+    margin-top: 10px;
+    width: 120px;
+}
+.add-to-cart div button{
+    border: none;
+    width: 180px;
+    height: 40px;
+    border-radius: 4px;
+    background-color: orange;
+    color: white;
+    cursor: pointer;
+}
+
+section div{
+    width: 30px;
+    text-align: center;
+    border: 1px solid rgb(133, 133, 133);
+    cursor: pointer;
+}
+
+.price {
+    color: rgb(255, 255, 255);
+    font-size:20px;
+    text-align: left;
+}
+
+.pd-price{
+    width: 60%;
+    display: flex;
+    font-size: 20px;
+    color: rgb(201, 130, 23);
+    justify-content: space-between;
+}
+
+
+.features {
+    width: 97%;
+    padding-top: 0px;
+    margin-top: 40px;
+    border: 1px solid black;
+}
+
+.features div{
+    display: flex;
+}
+.features div a{
+    margin: 0px;
+    color: rgb(201, 130, 23);
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 2px;
+    color: black;
+    margin-right: 10px;
+}
+
+.f-head h1{
+    color: rgb(201, 130, 23);
+    font-family: Arial, Helvetica, sans-serif;
+    
+}
+
+
+
+.features table tr td{
+    padding-left: 10px;
+    /* color: rgb(201, 130, 23); */
+}
+
+.features table{
+    border: 1px solid black;
+    width: 100%;
+}
+.features h3{
+    width: 100%;
+    background-color: gray;
+    margin-bottom: 0px;
+}
+
+.des:hover .f-head{
+    background-color: rgb(197, 95, 21);    
+}
+
+/* quantity */
+section{
+    color: black;
+    font-weight: 700;
+    display: flex;
+    font-size: 1.2rem;
+    justify-content: space-evenly;
+    margin-top: 15px;
+    width: 100%;
+}
+section div{
+    margin-top: -6px;
+}
+
+.wrapper{
+    width: 60%;
+    display: flex;
+}
+.wrapper span{
+    cursor: pointer;
+    font-size: 20px;
+    width: 40px;
+    text-align: center;
+    padding: 2px;
+    border: 1px solid rgb(133, 133, 133);
+}
+.wrapper span.num{
+    pointer-events: none;
+}
+.card {
+    max-width: 220px;
+    /* height: 420px; */
+    /* text-align: center; */
+    font-family: arial;
+    cursor: pointer;
+    /* float: left; */
+    /* padding: 0 10px; */
+    /* margin: 15px; */
+    margin-bottom: 25px;
+}
+.checked {
+    color: orange;
+}

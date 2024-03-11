@@ -1,0 +1,81 @@
+{% extends "store_app/base.html" %}
+{% load static %}
+
+{% block Link %}
+    <link rel="stylesheet" href="{% static 'store_app/css/about.css' %}">
+    <link rel="stylesheet" href="{% static 'store_app/css/about_media.css' %}">
+    
+{% endblock Link %}
+
+{% block title %} About {% endblock title %}
+  
+{% block content %}
+
+     <div class="container-ab">
+        <div class="front-view-ab">
+            <div></div>
+            <div class="left-v-ab">
+                <div>
+                    <h3>About Us</h3>
+                    <h2>A HERITAGE OF FOUR YEARS</h2>
+                    <div>
+                        <hr class="line-ab">
+                    </div>
+                    <h5>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quam assumenda culpa ipsum quidem nam
+                        nemo quisquam vero!</h5>
+                </div>
+            </div>
+        </div>
+
+        <div class="front-view-db">
+            <div></div>
+            <div class="left-v-db">
+                <div>
+                    <h3>HISTORY</h3>
+                    <h1>ESTABLISHED IN 2021</h1>
+                    <h5>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quam assumenda culpa ipsum quidem nam
+                        nemo quisquam vero!
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut pariatur dicta quidem soluta
+                        impedit possimus unde harum amet eveniet nam necessitatibus molestiae inventore, recusandae iure
+                        esse nemo quam? Qui, odit.
+                    </h5>
+                </div>
+            </div>
+        </div>
+        <div class="brand-det">
+            <div>
+                <h1>Our Partners</h1>
+            </div>
+            <div class="brand-name">
+                <div>
+                    <h2>Puma</h2>
+                </div>
+                <div>
+                    <h2>Under Armour</h2>
+                </div>
+                <div>
+                    <h2>Adidas</h2>
+                </div>
+                <div>
+                    <h2>Nike</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="video-det">
+            <div class="side-det">
+                <h3>Our Philosophy</h3>
+                <h2>Spectacular Creations That Give You A Distinct Look</h2>
+                <h6>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur laudantium itaque,
+                    voluptas omnis optio saepe praesentium similique sequi eaque
+                    facilis quis nemo. Alias vero, voluptate quisquam laborum beatae ducimus voluptates.</h6>
+            </div>
+            <div class="video"><iframe width="560" height="315"
+                    src="https://www.youtube.com/embed/4J_kxwT9zX4?si=mvvwyMoAzQqh-YDU" title="YouTube video player"
+                    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; 
+                picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}

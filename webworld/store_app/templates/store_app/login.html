@@ -1,0 +1,50 @@
+{% extends "store_app/base.html" %}
+{% load static %}
+
+{% block Link %}
+    <link rel="stylesheet" href="{% static 'store_app/css/login.css' %}">
+{% endblock Link %}
+
+{% block title %} Login {% endblock title %}
+
+{% block content %}
+    <!-- login -->
+
+    <div class="login">
+        <header>
+            <h1>MY ACCCUNT</h1>
+            <p>Home>> <span>Sign In</span></p>
+        </header>
+        <div class="login-form">
+            <div class="form-bd">
+                <h1>LOGIN</h1>
+                <form action="{% url "login" %}" method="post">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="id_username">Username:</label>
+                        <br>
+                        <input class="name" placeholder="Enter username or Email address*" name="username" required id="id_username"> 
+                        <small class="text-warning"></small>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="id_password">Password:</label> 
+                        <br>
+                        <input class="pass" required id="id_password" name="password"placeholder="Enter Password*">
+                        <small class="text-warning"></small>
+                        
+                    </div>
+                    <input type="checkbox" name="" id="remember">Remember me
+                    <div class="login-button">
+                        <input type="submit" value="LOGIN" class="btn mt-2 btn-primary">
+                        <div>
+                            <a href="{% url "signup" %}">Sign Up</a>
+                            <a href="#">Reset Password</a>
+                        </div>
+                    </div>
+                    
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

@@ -1,0 +1,129 @@
+.container-ab{
+    width: 85%;
+    height: 2000px;
+    margin-left: 6.5%;
+
+    /* background-color: blue; */
+}
+/* about */
+.front-view-ab{
+    width: 100%;
+    height: 600px;
+    margin-top: 40px;
+    background-image: url("../image/sports-manufacture.jpg");
+    background-color: black;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    box-shadow: 1px 1px 8px 5px rgb(54, 54, 54);
+    display: flex;
+    justify-content: space-between;
+    opacity: 0.95;
+}
+
+.left-v-ab{
+    width: 70%;
+    height: 100%;
+    color: rgb(255, 255, 255);
+}
+.line-ab{
+    width: 40%;
+    margin-left: -2px;
+    border: 1px solid rgb(241, 186, 103);
+    background-color: rgb(241, 186, 103);
+}
+.left-v-ab div{
+    width: 80%;
+    align-items: center;
+    font-size: 2.5rem;
+}
+
+.left-v-ab div h3{
+    margin-top: 40px;
+    color: rgb(0, 0, 0);
+}
+
+.left-v-ab div h5{
+    font-size: 1.9rem;
+    color: rgb(0, 0, 0);
+}
+
+/* history */
+.front-view-db{
+    width: 100%;
+    height: 600px;
+    background-image: url("../image/foot\ dark.jpg");
+    background-color: black;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    box-shadow: 1px 1px 8px 5px rgb(54, 54, 54);
+    display: flex;
+    justify-content: space-between;
+    opacity: 0.95;
+}
+
+.left-v-db{
+    width: 90%;
+    height: 100%;
+    color: rgb(255, 255, 255);
+}
+
+.left-v-db div{
+    width: 80%;
+    align-items: center;
+    font-size: 2.3rem;
+}
+
+.left-v-db div h3{
+    margin-top: 40px;
+    color: rgb(97, 97, 97);
+}
+
+/* brand detail */
+.brand-det{
+    background-color: rgb(20, 20, 20);
+    width: 100%;
+    height: 350px;
+    box-shadow: 1px 1px 8px 5px rgb(54, 54, 54);
+}
+.brand-det div{
+    width: 100%;
+    text-align: center;
+    color: white;
+    padding-top: 30px;
+    font-size: 1.4rem
+}
+
+.brand-name{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.brand-name div h2{
+    color: rgb(124, 123, 123);
+}
+
+/* video detail */
+.video-det{
+    width: 100%;
+    height: 400px;
+    background-color: black;
+    box-shadow: 1px 1px 8px 5px rgb(54, 54, 54);
+    display: flex;
+    justify-content: space-between;
+    opacity: 0.95;
+}
+
+.side-det{
+    margin-top: 40px;
+    width: 40%;
+    font-size: 1rem;
+    color: beige;
+    line-height: 30px;
+    padding: 30px 0px 0px 40px;
+}
+
+.video iframe{
+    padding: 75px 65px 0px 0px;
+}

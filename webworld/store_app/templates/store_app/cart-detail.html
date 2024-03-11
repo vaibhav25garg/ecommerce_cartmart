@@ -1,0 +1,111 @@
+{% extends "store_app/base.html" %}
+{% load static %}
+{% load cart_tag %}
+{% block Link %}
+    <link rel="stylesheet" href="{% static 'store_app/css/cart-detail.css' %}">
+{% endblock Link %}
+
+{% block title %} Cart Detail {% endblock title %}
+
+{% block content %}
+    <!-- products -->
+    <header>
+        <h1>CART</h1>
+        <p>Home >> <span>SOPPING CART</span></p>
+    </header>
+    {% if request.session.cart|length < 1 %}
+    <div class="no-item">
+        {% if key|length < 1 %}
+        <div>
+            <p>There are no more items in your cart </p>
+            <div class="clear-cart2">
+                <i class="fa-solid fa-arrow-left"></i>
+                <a href="{% url 'Store' %}">Continue Shopping😊</a>
+            </div>
+        </div>
+            
+        {% endif %}
+    </div>
+    {% else %}
+    <div class="cart-extra">
+        <div class="clear-cart1">
+            <a href="{% url 'cart_clear' %}">Clear Cart</a>
+        </div>
+    </div>
+    <div class="product-container">
+        <div class="product">
+            <div class="cart-item">
+                <div class="cart-heading">
+                    <h4 id="pdn">Product Name</h4>
+                    <h4 id="pdu">Unit Price</h4>
+                    <h4 id="pdq">Quantity</h4>
+                    <h4 id="pdt">Total</h4>
+                    <h4 id="pdr">Remove</h4>
+                </div>
+                {% for key,value in request.session.cart.items %}
+                <div class="cart-1">
+                    <div class="cart-img">
+                        <img src=" {{value.image}}" alt="" width="100%">
+                    </div>
+                    <div class="cart-n-q">
+                        <div>
+                            {{value.name}}
+                        </div>
+                        <a href="">View detail...</a>
+                    </div>
+                    <div class="cart-price">
+                        <p>Rs.<span>{{value.price}} </span>/-</p>
+                    </div>
+                    <div class="quantity">
+                        <section>
+                            QTY: 
+                           <div class="cart_quentity">
+                            <div class="cart_quantity_button">
+                                <a href="{% url 'item_increment' value.product_id %}    " class="cart_quantity_up">+</a>
+                                    <input type="text" class="cart-plus-minus-box" name="qtybutton" value='{{value.quantity}}' id="">
+                                <a href="{% url 'item_decrement' value.product_id %}" class="cart_quantity_down">-</a>    
+                            </div>
+                           </div>
+                        </section>
+                    </div>
+                    <div class="cart-price">
+                        <p>Rs.<span>{{ value.price|multiply:value.quantity }}</span>/-</p>
+                    </div>
+                    <div class="cart-action">
+                        <a href="{% url 'item_clear' key %}"><i class="fa-solid fa-xmark"></i></a>
+                    </div>
+                </div>
+                {% endfor %}
+            <div class="price-det">
+                <table>
+                    <h2 id="hed">Order Summary</h2>
+                    <tr>
+                        <td>Card Sub Total:</td>
+                        <td>Rs. <span>{{cart_total_amount}}</span></td>
+                    </tr>
+                    <tr>
+                        <td>GST 12%:</td>
+                        <td>Rs. <span>{{cart_total_amount|multiply:0.12}}</span></td>
+                    </tr>
+                    <tr>
+                        <td>Shipping Charge:</td>
+                        <td>Rs. <span>40</span></td>
+                    </tr>
+                    <tr>
+                        <td>Total Cart Amount:</td>
+                        <td>Rs. <span>{{cart_total_amount|add:450|add:40}}</span>/-</td>
+                    </tr>
+                </table>
+                <div class="payment-btn">
+                    <div class="btn-py">
+                        <a href="{% url "Address" %}">Proceed To Pay</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    </div>
+    
+    {% endif %}
+{% endblock content %}

@@ -1,0 +1,63 @@
+{% load static %}
+<!-- side-cart -->
+<div id="mySidefilter" class="sidefilter">
+    <div class="cart-up">
+        <div>
+            <h3>Top Category</h3>
+        </div>
+        <div><a href="javascript:void(0)" class="closebtn" onclick="closeFilter()">&times;</a></div>
+    </div>
+    <hr>
+    <div class="cat-det">
+        <ul>
+            <li><a href="/store/">All (<span>30</span>)</a></li>
+            {% for cat in categories %}
+                <li><a href="/store/?categories={{cat.id}}">{{cat.name}}</a></li>
+            {% endfor %}
+        </ul>
+        
+    </div>
+
+    <div class="cart-up">
+        <div>
+            <h3>Price Filter</h3>
+        </div>
+    </div>
+    <hr>
+    <div class="cat-price">
+        <ul>
+            {% for p in price %}
+                <li><a href="/store/?filter_price={{p.id}}">{{p.price}}</a></li>
+            {% endfor %}
+        </ul>
+       
+    </div>
+
+    <div class="cart-up">
+        <div>
+            <h3>Color</h3>
+        </div>
+    </div>
+    <hr>
+    <div class="cat-color">
+            {% for c in color %}
+                <a href="/store/?color={{c.id}}" style="background-color: {{c.code}};"></a>
+            {% endfor %}
+    </div>
+
+    <div class="cart-up">
+        <div>
+            <h3>Brand</h3>
+        </div>
+    </div>
+    <hr>
+    <div class="cat-price">
+        <ul>
+            <li><a href="">All Brand</a></li>
+            {% for b in brand %}
+                <li><a href="">{{b.name}}</a></li>
+            {% endfor %}
+        </ul>
+        
+    </div>
+</div>

@@ -1,0 +1,47 @@
+{% load static %}
+{% load cart_tag %}
+<!-- side-cart -->
+<div id="mySidecart" class="sidecart1">
+    <div class="cart-up1">
+        <div>
+            <h3 style="color:rgb(241, 186, 103);">Shopping Cart</h3>
+        </div>
+        <div><a href="javascript:void(0)" class="closebtn" onclick="closeCart()">&times;</a></div>
+    </div>
+    <hr>
+    <div class="cart-item1">
+        {% for key,value in request.session.cart.items %}
+        <div class="cart-11">
+            <div class="cart-img1">
+                <img src="{{value.image}}" alt="" width="100%">
+            </div>
+            <div class="cart-n-q1">
+                <div>
+                    {{value.name | truncatewords:10 }}
+                </div>
+                <div>
+                    QTY: <span>{{value.quantity}}</span>
+                </div>
+            </div>
+            <div class="cart-price1">
+
+                <h5>TOTLE</h5>
+                <p>Rs.<span> {{ value.price|multiply:value.quantity }}</span>/-</p>
+            </div>
+            <div class="cart-action1">
+                <a href="{% url 'item_clear' key %}"><i class="fa-solid fa-xmark"></i></a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <div class="cart-down1">
+        <div class="side-cart-button11">
+            <a href="{% url "cart_detail" %}">Go To Cart</a>
+        </div>
+    </div>
+
+    <!-- 
+    <div class="side-cart-button">
+        <a href="#">SHOP NOW</a>
+    </div> -->
+</div>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'store_app/css/style.css' %}">
+    {% comment %} <link rel="stylesheet" href="{% static 'store_app/css/all.min.css' %}"> {% endcomment %}
+    <link rel="stylesheet" href="{% static 'store_app/css/media.css' %}">
+    <link rel="stylesheet" href="{% static 'store_app/css/fontawesome.min.css' %}">
+    {% block Link %}
+
+    {% endblock Link %}
+    <style>
+        {% block style %}{% endblock style %}
+    </style>
+    <title>
+        {% block title %}{% endblock title %}
+    </title>
+</head>
+
+<body>
+     <!-- LOGO -->
+    <div class="logo">
+        <div><img src="{% static "store_app/image/logo-main.png" %}" alt="#"></div>
+    </div>
+
+    <!-- Navbar -->
+    {% block filter %}{% endblock filter %}
+
+    <div class="navbar">
+        {% include "store_app/navbar.html" %}
+    </div>
+
+    <div>
+        {% include "store_app/sidecart.html" %}
+    </div>
+
+    <div>
+        {% include "store_app/sidemanue.html" %}
+    </div>
+
+    <div class="msg-con">
+        <div class="row">
+            {% block msg %}
+            
+            {% endblock msg %}
+        </div>
+
+        <div class="row">
+            {% block content %}
+            {% endblock content %}
+        </div>
+    </div>
+
+    <!-- footer -->
+    <div>
+        {% include "store_app/footer.html" %}
+    </div>
+    <script src="{% static 'store_app/js/style.js' %}"></script>
+    <script src="{% static 'store_app/js/all.min.js' %}"></script>
+    {% block script %}{% endblock script %}
+</body>
+
+</html>

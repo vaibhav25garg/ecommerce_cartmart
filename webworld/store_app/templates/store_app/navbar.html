@@ -1,0 +1,29 @@
+{% load static %}
+<nav class="navbar">
+    <div class="nav">
+        <ul class="nav-manu">
+            <li><a href="{% url "Home" %}" class="n1">Home</a></li>
+            <li><a href="{% url "about" %}" class="n1">About Us</a></li>
+            <li><a href="{% url "Store" %}" class="n1">Store</a></li>
+            <li><a href="" class="n1">My account <i class="fa-solid fa-caret-down"></i></a>
+                <ul class="acc-detail">
+                    <li><a href="#">Orders</a></li>
+                    <hr>
+                    <li><a href="#">Account Details</a></li>
+                </ul>
+            </li>
+            <li><a href="{% url "Contact-Us" %}" class="n1">Contact Us</a></li>
+            
+            
+            {% if user.is_authenticated %}
+            <li><a href="{% url "logout" %}" class="n1">Logout</a></li>
+            {% else %}
+            <li><a href="{% url "login" %}" class="n1">Login</a></li>
+            {% endif %}
+        </ul>
+        <div class="cart">
+            <div><a href="#">Cart/Rs0.00<span style="font-size:20px;cursor:pointer" onclick="openCart()"><i
+                            class="fa-solid fa-cart-shopping"></i></span></a></div><span class="cart-count">{{request.session.cart|length}}</span>
+        </div>
+    </div>
+</nav>

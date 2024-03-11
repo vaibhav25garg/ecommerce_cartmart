@@ -1,0 +1,24 @@
+ {% load static %}
+ <!-- side manu -->
+
+ <div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="{% url "Home" %}">Home</a>
+    <a href="{% url "about" %}">About Us</a>
+    <a href="{% url "Store" %}">Store</a>
+    <div class="dropdown">
+        <div class="dropbtn">My Account<i class="fa-solid fa-caret-down" id="down-key"></i></div>
+        <div class="dropdown-content">
+            <a href="#">Orders</a>
+            <a href="#">Account Details</i></a>
+        </div>
+    </div>
+    <div><a href="{% url "Contact-Us" %}">Contact Us</a></div>
+</div>
+
+<span class="sidebar" style="font-size:30px;cursor:pointer" onclick="openNav()"><i class="fa-solid fa-bars"></i></span>
+
+<div class="cart-s">
+    <div><a href="#">Cart/Rs0.00<span style="font-size:20px;cursor:pointer" onclick="openCart()"><i
+                    class="fa-solid fa-cart-shopping"></i></span></a></div><span class="cart-count">{{request.session.cart|length}}</span>
+</div>

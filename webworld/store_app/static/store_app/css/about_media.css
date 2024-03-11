@@ -1,0 +1,40 @@
+@media screen and (max-width: 1320px) {
+    
+}
+
+@media screen and (max-width: 1250px) {
+    
+}
+
+@media screen and (max-width: 1050px) {
+    .container-ab{
+        height: 2000px;
+        margin-top: 80px;
+    }
+    .front-view-ab{
+        height: 600px;
+    }
+    .side-det{
+
+    }
+}
+
+@media screen and (max-width: 930px) {
+    
+}
+
+@media screen and (max-width: 800px) {
+    
+}
+
+@media screen and (max-width: 650px) {
+    
+}
+
+@media screen and (max-width: 500px) {
+    
+}
+
+@media screen and (max-width: 375px) {
+    
+}

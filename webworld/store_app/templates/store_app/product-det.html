@@ -1,0 +1,76 @@
+{% extends "store_app/base.html" %}
+{% load static %}
+
+{% block Link %}
+    <link rel="stylesheet" href="{% static 'store_app/css/product-det.css' %}">
+    
+{% endblock Link %}
+
+{% block title %} Product Detail {% endblock title %}
+
+{% block content %}
+       <!-- products -->
+       <header>
+        <h1>Product Details</h1>
+        <p>Home >> <span>Store</span> >> <span>{{product.categories}}</span></p>
+    </header>
+    <div class="product-detail">
+        <div class="prd-display">
+            <div class="product-img">
+                <img src="{{product.image.url}}" id="imagebox">
+            </div>
+
+            <div class="product-details-side">
+                <div>
+                    <h1>{{product.name}}</h1>
+                    <hr>
+                    <p class="discription">
+                        {{product.description | truncatewords:70 | safe}}
+                    </p>
+                    <div class="pd-price">
+                        <div>
+                            <p class="price">Rs. <span>{{product.price}}</span>/-</p>
+                        </div>
+                        <p><span>{{product.discount}}</span>%off</p>
+                    </div>
+                    <div class="catagories">
+                        <h3>Categories: <a href="/store/?categories={{categories.id}}"><span style="color: rgb(182, 193, 255); font-weight: 100; font-style: italic; cursor: pointer; text-decoration: underline;">{{product.categories}}</span></a></h3>
+                    </div>
+                    <div class="tags">
+                        <h3>Tags: <span style="color: rgb(182, 193, 255); font-weight: 100; font-style: italic; cursor: pointer; text-decoration: underline;">smart divice</span></h3>
+                    </div>
+                    <div class="add-to-cart">
+                        <div>
+                            <a href="{% url 'cart_add' product.id %}"><button ><i class="fa-solid fa-cart-shopping"></i>ADD TO CART</button></a>
+                        </div>
+                    </div>
+                    <div class="features">
+                        <div>
+                            <a href="" class="f-head">
+                                <h1>FEATURES</h1>
+                            </a>
+                        </div>
+                        <h3>Specifications</h3>
+                        <table>
+                            {{product.information | safe}}
+
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="small-img">
+            {% for i in Images %}
+            <div>
+                <img src="/{{i.Image.url}}" alt="" onclick="functio(this)">
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    
+{% comment %} 
+    {{images.Image.url}}
+    {{images.Image.url}}
+    {{images.Image.url}} {% endcomment %}
+{% endblock content %}

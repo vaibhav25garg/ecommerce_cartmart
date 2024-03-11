@@ -1,0 +1,86 @@
+{% extends "store_app/base.html" %}
+{% load static %}
+
+{% block Link %}
+    <link rel="stylesheet" href="{% static 'store_app/css/store.css' %}">
+    <link rel="stylesheet" href="{% static 'store_app/css/media.css' %}">
+{% endblock Link %}
+
+{% block title %} Store {% endblock title %}
+
+{% block filter %}
+<div>
+    {% include "store_app/filter.html" %}
+</div> 
+{% endblock filter %}
+
+
+{% block content %}
+  
+    <!-- products -->
+    <header>
+        <h1>STORE</h1>
+        <p>Home >> <span>Store</span></p>
+        <div class="pd-count">
+            <h3><span>12</span> Found products of <span>30</span></h3>
+        </div>
+    </header>
+    <div class="product-container">
+        <div class="header-search">
+            <div class="cart1">
+                <div><a href="#">Filter<span style="font-size:20px;cursor:pointer" onclick="openFilter()"><i
+                                class="fa-solid fa-filter"></i></span></a></div>
+            </div>
+            <div class="search">
+                <form action="/store/" method="get">
+                    <input type="text" name="query" id="query" placeholder="Search">
+                    <button><i class="fa-solid fa-magnifying-glass"></i></button>
+                </form>
+            </div>  
+          
+            <div class="pd-pagination">
+                <span>show</span>
+                <span>2</span>
+                <span>3</span>
+            </div>
+            <div class="dropdown1">
+                <button class="dropbtn1">SORT BY<i class="fa-solid fa-caret-down"></i></button>
+                <div class="dropdown-content1">
+                    <a href="/store/{% for p in product %}?ATOZ={{p.id}} {% endfor %}">Name A to Z</a>
+                    <a href="/store/{% for p in product %}?ZTOA={{p.id}} {% endfor %}}">Name Z to A</a>
+                    <a href="/store/{% for p in product %}?low_to_high={{p.id}} {% endfor %}}">Price low to high</a>
+                    <a href="/store/{% for p in product %}?high_to_low={{p.id}} {% endfor %}}">Price high to low</a>
+                    <a href="/store/{% for p in product %}?new={{p.id}} {% endfor %}}">New Products</a>
+                    <a href="/store/{% for p in product %}?old={{p.id}} {% endfor %}}">Old Products</a>
+                </div>
+            </div>
+        </div>
+        <div class="product">
+            {% for prod in product %}
+            <div class="card">
+                <div class="tag"><span>{{prod.condition}}</span></div>
+                <a href="{% url "Product-Detail" prod.id  %}"><img src="{{prod.image.url}}" style="width:90%; height:200px; margin-top:10px"></a>
+                <hr>
+                <h1>{{prod.name | truncatewords:10}}</h1>
+                <div>
+                    <p class="price">Rs. <span>{{prod.price}}</span></p>
+                    <p class="discount"><span >{{prod.discount}}</span>%off</p>
+                </div>
+                
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+                <a href="{% url 'cart_add' prod.id %}"><button>Add to Cart</button></a>
+            </div>
+            {% endfor %}
+            <div class="no-prod">
+                {% if product|length < 1 %}
+                    <p>No Product Found😒</p>
+                {% endif %}
+            </div>
+                
+        </div>
+{% endblock content %}
+

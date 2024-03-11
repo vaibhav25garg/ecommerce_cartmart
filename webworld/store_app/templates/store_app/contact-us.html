@@ -1,0 +1,86 @@
+{% extends "store_app/base.html" %}
+{% load static %}
+
+{% block Link %}
+    <link rel="stylesheet" href="{% static 'store_app/css/contact-us.css' %}">
+{% endblock Link %}
+
+{% block title %} Cart Detail {% endblock title %}
+
+{% block content %}
+    <!-- contact -->
+
+    <div class="container-con">
+        <div class="front-view-con">
+            <div class="shit"></div>
+            <div class="left-v-con">
+                <div>
+                    <h3>CONTACT US</h3>
+                    <h4>Get in Touch with Us for Any Custom Sports Product</h4>
+                    <div>
+                        <hr class="line-con">
+                    </div>
+                    <h6>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quam assumenda culpa ipsum quidem nam
+                        nemo quisquam vero!</h6>
+                </div>
+            </div>
+        </div>
+
+        <div class="map-det">
+            <div class="map-name">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3630.0704056211043!2d73.7490211745429!3d24.517646058891057!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3967e933b2cf56ff%3A0x77d81cda2dadfb80!2sTechno%20India%20NJR%20Institute%20of%20Technology!5e0!3m2!1sen!2sin!4v1702216918768!5m2!1sen!2sin"
+                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+
+        <div class="contact-det">
+            <form id="fcf-form-id" class="fcf-form-class" method="post" action="/contact/">
+                {% csrf_token %}
+                <div class="fcf-form-group">
+                    <label for="Name" class="fcf-label">Your name</label>
+                    <div class="fcf-input-group">
+                        <input type="text" id="Name" name="Name" class="fcf-form-control" required>
+                    </div>
+                </div>
+        
+                <div class="fcf-form-group">
+                    <label for="Email" class="fcf-label">Your email address</label>
+                    <div class="fcf-input-group">
+                        <input type="email" id="Email" name="Email" class="fcf-form-control" required>
+                    </div>
+                </div>
+                
+                <div class="fcf-form-group">
+                    <label for="Subject" class="fcf-label">Subject</label>
+                    <div class="fcf-input-group">
+                        <input type="text" id="Subject" name="Subject" class="fcf-form-control" required>
+                    </div>
+                </div>
+
+                <div class="fcf-form-group">
+                    <label for="Message" class="fcf-label">Your message</label>
+                    <div class="fcf-input-group">
+                        <textarea id="Message" name="Message" class="fcf-form-control" rows="6" maxlength="3000" required></textarea>
+                    </div>
+                </div>
+        
+                <div class="fcf-form-group">
+                    <button type="submit" id="fcf-button" class="fcf-btn fcf-btn-primary fcf-btn-lg fcf-btn-block">Send Message</button>
+                </div>
+            </form>
+            <div class="map-name">
+                <h1>+91 7694902568</h1>
+                <h3>12 W Broadway, New York 10007, USA</h3>
+                <div class="social">
+                    <a href=""><i class="fa-brands fa-facebook"></i></a>
+                    <a href=""><i class="fa-brands fa-twitter"></i></a>
+                    <a href=""><i class="fa-brands fa-linkedin"></i></a>
+                    <a href=""><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+{% endblock content %}

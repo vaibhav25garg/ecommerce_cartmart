@@ -1,0 +1,41 @@
+{% extends "store_app/base.html" %}
+{% load static %}
+
+{% block title %} Thank You {% endblock title %}
+    
+{% block Link %}
+    <link href='https://fonts.googleapis.com/css?family=Lato:300,400|Montserrat:700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{% static 'store_app/css/fontawesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'store_app/css/normalize.min.css' %}">
+    <link rel="stylesheet" href="{% static 'store_app/css/default_thank_you.css' %}">
+    <link rel="stylesheet" href="{% static 'store_app/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'store_app/css/media.css' %}">
+    <link rel="stylesheet" href="{% static 'store_app/css/all.min.css' %}">
+{% endblock Link %}
+
+{% block style %}
+    body{
+        color:white;
+    }
+{% endblock style %}
+
+{% block content %}
+<header class="site-header" id="header">
+    <h1 class="site-header__title" data-lead-id="site-header-title">THANK YOU!</h1>
+</header>
+
+<div class="main-content">
+    <i class="fa fa-check main-content__checkmark" id="checkmark"></i>
+    <p class="main-content__body" data-lead-id="main-content-body">"Congratulations! Your payment was successfully processed, confirming your order. Thank you for choosing us. Expect swift delivery and top-notch service. Happy shopping!"</p>
+</div>
+
+<footer class="site-footer" id="footer">
+    <p class="site-footer__fineprint" id="fineprint">Copyright ©2014 | All Rights Reserved</p>
+</footer>
+
+{% endblock %}
+
+{% block script %}
+<script src="{% static 'store_app/js/jquery-1.9.1.min.js' %}"></script>
+<script src="{% static 'store_app/js/html5shiv.js' %}"></script>
+{% endblock script %}

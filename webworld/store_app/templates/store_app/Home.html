@@ -1,0 +1,165 @@
+{% extends "store_app/base.html" %}
+{% load static %}
+
+{% block Link %}
+<meta http-equiv="X-UA_Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, intial-scale=1.0">
+<link rel="stylesheet" href="{% static 'store_app/css/style.css' %}">
+<link rel="stylesheet" href="{% static 'store_app/css/lightslider.css' %}">
+<link rel="stylesheet" href="{% static 'store_app/css/media.css' %}">
+{% endblock Link %}
+
+{% block title %} Home {% endblock title %}
+
+{% block content %}
+
+<div class="container">
+  <div class="slider-frame">
+    <div class="slide-images">
+      <div class="img-container">
+        <img src="{% static "store_app/image/img1.png" %}">
+      </div>
+      <div class="img-container">
+        <img src="{% static "store_app/image/img2.jpg" %}">
+      </div>
+      <div class="img-container">
+        <img src="{% static "store_app/image/img3.jpg" %}">
+      </div>
+    </div>
+  </div>
+
+  <div class="head">
+    <h1>MEDAL WORTHY BRANDS TO BAG</h1>
+  </div>
+  
+  <!-- Middle -->
+    <section class='slider'>
+        <ul id="autoWidth" class="cs-hidden">
+          {% for prod in product %}
+          <li class="item-a">
+            <div class="card">
+              <div class="tag"><span>{{prod.condition}}</span></div>
+              <a href="{% url "Product-Detail" prod.id  %}"><img src="{{prod.image.url}}" style="width:90%; height:200px; margin-top:10px"></a>
+              <hr>
+              <h1>{{prod.name | truncatewords:10}}</h1>
+              <div>
+                  <p class="price">Rs. <span>{{prod.price}}</span></p>
+                  <p class="discount"><span >{{prod.discount}}</span>%off</p>
+              </div>
+              
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star"></span>
+              <span class="fa fa-star"></span>
+              <a href="{% url 'cart_add' prod.id %}"><button>Add to Cart</button></a>
+            </div> 
+          </li>
+          {% endfor %}
+        </ul> 
+    </section>
+
+    <div class="head1">
+      <h1>GRAND GLOBAL BRANDS</h1>
+    </div>
+    
+<!-- bottom -->
+<div class="bottom-view">
+  <div class="cat">
+    <div class="cat_img">
+      <img src="{% static  "store_app/image/cr1.png" %}" alt="">
+    </div>
+    <div class="box_cat">
+      <h3>Mens Wear</h3>
+      <h2>30-40%</h2>
+      <h4>Shop Now</h4>
+    </div>
+  </div>
+
+  <div class="cat">
+    <div class="cat_img">
+      <img src="{% static  "store_app/image/cr1.png" %}" alt="">
+    </div>
+    <div class="box_cat">
+      <h3>Mens Wear</h3>
+      <h2>30-40%</h2>
+      <h4>Shop Now</h4>
+    </div>
+  </div>
+
+  <div class="cat">
+    <div class="cat_img">
+      <img src="{% static  "store_app/image/cr1.png" %}" alt="">
+    </div>
+    <div class="box_cat">
+      <h3>Mens Wear</h3>
+      <h2>30-40%</h2>
+      <h4>Shop Now</h4>
+    </div>
+  </div>
+
+  <div class="cat">
+    <div class="cat_img">
+      <img src="{% static  "store_app/image/cr1.png" %}" alt="">
+    </div>
+    <div class="box_cat">
+      <h3>Mens Wear</h3>
+      <h2>30-40%</h2>
+      <h4>Shop Now</h4>
+    </div>
+  </div>
+
+  <div class="cat">
+    <div class="cat_img">
+      <img src="{% static  "store_app/image/cr1.png" %}" alt="">
+    </div>
+    <div class="box_cat">
+      <h3>Mens Wear</h3>
+      <h2>30-40%</h2>
+      <h4>Shop Now</h4>
+    </div>
+  </div>
+
+  <div class="cat">
+    <div class="cat_img">
+      <img src="{% static  "store_app/image/cr1.png" %}" alt="">
+    </div>
+    <div class="box_cat">
+      <h3>Mens Wear</h3>
+      <h2>30-40%</h2>
+      <h4>Shop Now</h4>
+    </div>
+  </div>
+
+  <div class="cat">
+    <div class="cat_img">
+      <img src="{% static  "store_app/image/cr1.png" %}" alt="">
+    </div>
+    <div class="box_cat">
+      <h3>Mens Wear</h3>
+      <h2>30-40%</h2>
+      <h4>Shop Now</h4>
+    </div>
+  </div>
+
+  <div class="cat">
+    <div class="cat_img">
+      <img src="{% static  "store_app/image/cr1.png" %}" alt="">
+    </div>
+    <div class="box_cat">
+      <h3>Mens Wear</h3>
+      <h2>30-40%</h2>
+      <h4>Shop Now</h4>
+    </div>
+  </div>
+</div>
+</div>
+{% endblock content %}
+
+{% block script %}
+
+<script src="{% static 'store_app/js/jquary.js' %}"></script>
+<script src="{% static 'store_app/js/lightslider.js' %}"></script>
+<script src="{% static 'store_app/js/style.js' %}"></script>
+<script src="{% static 'store_app/js/all.min.js' %}"></script>
+{% endblock script %}
